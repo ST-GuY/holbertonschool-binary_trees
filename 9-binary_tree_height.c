@@ -17,6 +17,10 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		return (0);
     /* Si l'arbre est vide (NULL), la hauteur est 0 */
 
+	if (tree->left == NULL && tree->right == NULL)
+		return (0);
+	/* Cas d'un nœud feuille (aucun enfant) */
+
 	left_height = binary_tree_height(tree->left);
     /* Calcul récursif de la hauteur du sous-arbre gauche */
 
