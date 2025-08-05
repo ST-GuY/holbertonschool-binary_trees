@@ -11,14 +11,15 @@
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
+	size_t left_height, right_height;
 	if (tree == NULL)
 		return (0);
     /* Si l'arbre est vide (NULL), la hauteur est 0 */
 
-	size_t left_height = binary_tree_height(tree->left);
+	left_height = binary_tree_height(tree->left);
     /* Calcul récursif de la hauteur du sous-arbre gauche */
 
-	size_t right_height = binary_tree_height(tree->right);
+	right_height = binary_tree_height(tree->right);
     /* Calcul récursif de la hauteur du sous-arbre droit */
 
 	return (1);
