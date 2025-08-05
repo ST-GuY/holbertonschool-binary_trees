@@ -12,6 +12,7 @@
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 	size_t left_height, right_height;
+
 	if (tree == NULL)
 		return (0);
     /* Si l'arbre est vide (NULL), la hauteur est 0 */
@@ -22,6 +23,16 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	right_height = binary_tree_height(tree->right);
     /* Calcul récursif de la hauteur du sous-arbre droit */
 
-	return (1);
-    /* Retourne 1 (ici il faut retourner 1 + max(left_height, right_height)) */
+		if (left_height > right_height)
+	{
+		return (left_height + 1);
+		/* Si le sous-arbre gauche est plus haut, */
+		/* on retourne sa hauteur + 1 (pour le nœud courant) */
+	}
+	else
+	{
+		return (right_height + 1);
+		/* Sinon, le sous-arbre droit est plus haut (ou égal), */
+		/* on retourne sa hauteur + 1 */
+	}
 }
